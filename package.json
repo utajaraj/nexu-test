@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "data-migration": "ts-node ./migrations/20240923205536_init/data-migration.ts",
     "start": "next start",
     "lint": "next lint",

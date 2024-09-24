@@ -7,7 +7,7 @@ async function main() {
     await prisma.$transaction(async (tx) => {
         const brands: Brand[] = brands_data
         const cars: Car[] = cars_data
-        const brand_data = await tx.brands.createMany({
+        await tx.brands.createMany({
             data: brands
         })
         const db_brands = await tx.brands.findMany()
@@ -23,10 +23,9 @@ async function main() {
                 delete car.brand_name
             }
         }
-        const car_data = await tx.cars.createMany({
+        await tx.cars.createMany({
             data: cars
         })
-        console.log(car_data)
     })
 }
 
