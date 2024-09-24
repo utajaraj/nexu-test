@@ -1,0 +1,1 @@
+export const decimal_regex = /^(?!0*[.,]0*$|[.,]0*$|0*$)\d+[,.]?\d{0,2}$/
